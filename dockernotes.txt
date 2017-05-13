@@ -6,3 +6,10 @@ remeber if u push dev anywhere u will need to rebuild image
 use docker-compose up to start app
 use docker-compose build to rebuild
 or use docker-compose up --build to rebuild and run
+
+I was having an issue where it seemed like the docker-comose.dev.yml was not mounting my app,
+so I couldn’t see my changes reflected without restarting the app every time.
+I changed the file name to docker-compose.override.yml, and that seems to have fixed the problem.
+
+TODO: need to figure out how deploying will work
+and if i need to ignore the docker override file somehow
