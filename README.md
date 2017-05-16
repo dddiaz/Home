@@ -13,3 +13,6 @@ TODO:
 read:
 codebuild:
 http://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html#sample-docker-docker-hub
+
+Blog TODO:
+- post about code pipeline and docker
