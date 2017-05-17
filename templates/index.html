@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Daniel Diaz's Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Daniel Diaz's Personal Website" />
+		<meta name="keywords" content="Software Engineer Web Developer" />
+		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie8.css') }}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie9.css') }}" /><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/donut.css') }}" />
+	</head>
+	<body>
+		<!--
+		Hi There! Look at you checking out the source.
+		I hope you like what you see.
+		Nothing is ever perfect, but I am proud of what I have accomplished.
+		If you notice anything out of place, feel free to let me know!
+		-->
+
+		<!-- Header -->
+		<div id="header" class="skel-layers-fixed">
+			<div class="top">
+				<!-- Logo -->
+				<div id="logo">
+					<span class="image avatar48"><img src="{{ url_for('static', filename='images/dddiaz-icon.jpg') }}" alt="Me" /></span>
+					<h1 id="title">Daniel Diaz</h1>
+					<p>Software Engineer</p>
+				</div>
+				<!-- Nav -->
+				<nav id="nav">
+					<!--
+						Prologue's nav expects links in one of two formats:
+						1. Hash link (scrolls to a different section within the page)
+							<li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+						2. Standard link (sends the user to another page/site)
+							<li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+					-->
+					<ul>
+						<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+						<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+						<li><a href="#bg-stats" id="bg-stats-link" class="skel-layers-ignoreHref"><span class="icon fa-rocket">BG Stats</span></a></li>
+						<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+						<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="bottom">
+				<!-- Social Icons -->
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/daniel-diaz-3a784155" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="{{ url_for('static', filename='resume/resumeDiaz.pdf') }}" class="icon fa-file"><span class="label">Resume</span></a></li>
+					<li><a href="https://github.com/dddiaz" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="mailto:daniel.delivn.diaz@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Intro -->
+			<section id="top" class="one dark cover">
+				<div class="container">
+					<header>
+						<h2 class="alt">Hi There!</h2>
+						<h2 class="alt">My name is <strong>Daniel Diaz</strong>,
+							and I am a Software Engineer living in SoCal.</h2>
+					</header>
+					<footer>
+						<a href="#about" class="button scrolly">Learn More</a>
+					</footer>
+				</div>
+			</section>
+			<!-- About -->
+			<section id="about" class="two">
+				<div class="container">
+
+					<header>
+						<h2>About Me</h2>
+					</header>
+
+					<a href="#" class="image featured"><img src="{{ url_for('static', filename='images/dddiaz-bg.jpg') }}" alt="" /></a>
+
+					<p>
+						I am a Computer Science(B.S.) and Political Science(B.A.) graduate from the University of California, Irvine.
+						</br>
+						I love to code and specialize in web applications.
+						When I am not coding you might find me sailing, taking photos, scuba diving, or volunteering with JDRF.
+					</p>
+
+					<footer id="large-screen-button-footer">
+						<a href="resume/resumeDiaz.pdf" class="button scrolly">Resume</a>
+						<a href="http://www.linkedin.com/pub/daniel-diaz/55/841/3a7" class="button scrolly">View My LinkedIn Profile</a>
+					</footer>
+
+					<div id="small-screen-button-footer">
+						<div style="padding-bottom:25px;">
+							<a href="{{ url_for('static', filename='resume/resumeDiaz.pdf') }}" class="button scrolly">Resume</a>
+						</div>
+						<div>
+							<a href="http://www.linkedin.com/pub/daniel-diaz/55/841/3a7" class="button scrolly">View My LinkedIn Profile</a>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- bgstats -->
+			<section id="bg-stats" class="bgPanel">
+				<div class="container">
+					<header>
+						<h2>Blood Glucose Stats</h2>
+					</header>
+					<div id="bg-donut" class="row">
+						<div class = "6u">
+							<div class="donut">
+								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										width="100%" height="100%" viewBox="0 0 230 230" enable-background="new 0 0 340 333" xml:space="preserve">
+
+									<defs>
+										<linearGradient id="quotaDonut__gradient">
+										<stop stop-color="#fc0023" offset="0%"></stop>
+										<stop stop-color="#f50" class="quotaDonut__gradientStopEnd" offset="100%"></stop>
+										</linearGradient>
+									</defs>
+
+									<g transform="translate(115, 115)">
+									<circle r="100" class="circle-back" />
+									<circle r="115" class="circle-border" />
+									<circle r="85"  class="circle-border" />
+									<circle r="100" class="circle-front" transform="rotate(135.1)" />
+									</g>
+									<g id="svg_1">
+										<path d="m117.5772,63.18713c-0.92796,-1.31666 -2.43543,-2.10089 -4.03533,-2.10089c-1.60345,0 -3.10736,0.78064 -4.04243,2.10089c-9.98341,14.09833 -34.99531,51.18062 -34.99531,68.64616c0,21.81479 17.47455,39.49977 39.03418,39.49977c21.56319,0 39.04128,-17.68497 39.04128,-39.49977c0.00356,-17.46554 -25.019,-54.54783 -35.00241,-68.64616l0.00002,0l-0.00002,0l0.00002,0zm-17.74477,91.00416c-1.06659,1.28429 -2.60251,1.94983 -4.14908,1.94983c-1.2266,0 -2.47098,-0.42451 -3.4878,-1.2879c-15.39111,-13.11623 -10.07942,-32.48837 -9.84476,-33.31219c0.83194,-2.91031 3.81488,-4.57951 6.70538,-3.7485c2.87273,0.83102 4.52951,3.86726 3.71534,6.76678c-0.1671,0.62953 -3.49136,13.46517 6.41384,21.90472c2.28253,1.94981 2.57763,5.40695 0.64706,7.72728l0.00001,0zm10.65538,10.89661c-3.17492,0 -5.75966,-2.6153 -5.75966,-5.82782c0,-3.22331 2.58475,-5.83144 5.75966,-5.83144c3.18561,0 5.75967,2.61172 5.75967,5.83144c0,3.2197 -2.57761,5.82782 -5.75967,5.82782z" fill="#fc0023"/>
+									</g>
+								</svg>
+							</div>
+						</div>
+						<div class="5u">
+							<div id="BGText" style="font-weight: bolder;font-size: larger;">
+								Loading Blood Glucose Data...
+							</div>
+							<div id="" style="">
+								A person without Type 1 Diabetes has an average blood glucose reading of 120. The graphic shows whether I am above, below, or at average.
+							</div>
+							<div id="BGDescription">
+								<p>Using AWS Lambda (NodeJS) and API Gateway, I am able to retrieve real time data regarding my current glucose reading. I hope to develop analytics and insights into glucose readings to help Type I Diabetics better manage their Diabetes.</p>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<a href="https://github.com/dddiaz/BG-Stats-API" class="button">Check Out The Project On Github!</a>
+					</footer>
+				</div>
+			</section>
+			<!-- portfolio -->
+			<section id="portfolio" class="three">
+				<div class="container">
+					<header>
+						<h2>Portfolio</h2>
+					</header>
+					<p>When it comes to application development there are many languages to choose from,
+						a few of the languages I specialize in include Python, C++, and C#.NET.
+						Below you can check out a few of the many interesting projects that I work on.</p>
+					<div class="row">
+						<div class="4u">
+							<article class="item">
+								<a href="https://github.com/dddiaz/3DReconstructionPipeline" class="image fit"><img src="{{ url_for('static', filename='images/3dreconstruction.png') }}" alt="" /></a>
+								<header>
+									<h3>3D Reconstrution Pipeline</h3>
+								</header>
+							</article>
+							<!-- <article class="item">
+								<a href="http://snapmap.us" class="image fit"><img src="images/snapmap_full.png" alt="" /></a>
+								<header>
+									<h3>Snapmap</h3>
+								</header>
+							</article> -->
+						</div>
+						<div class="4u">
+							<article class="item">
+								<a href="https://github.com/dddiaz/danieldelvindiaz.com" class="image fit"><img src="{{ url_for('static', filename='images/DiazGear.png') }}" alt="" /></a>
+								<header>
+									<h3>This Website</h3>
+								</header>
+							</article>
+							<!-- <article class="item">
+								<a href="https://github.com/dddiaz/BeckmanResearchApplication" class="image fit"><img src="images/beckman.png" alt="" /></a>
+								<header>
+									<h3>Beckman Research Application</h3>
+								</header>
+							</article> -->
+						</div>
+						<div class="4u">
+							<article class="item">
+								<a href="https://github.com/dddiaz/searchengine" class="image fit"><img src="{{ url_for('static', filename='images/django.png') }}" alt="" /></a>
+								<header>
+									<h3>Search Engine</h3>
+								</header>
+							</article>
+							<!-- <article class="item">
+								<a href="https://github.com/dddiaz" class="image fit"><img src="images/github.png" alt="" /></a>
+								<header>
+									<h3>Check Me Out On Github</h3>
+								</header>
+							</article> -->
+						</div>
+					</div>
+					<footer>
+						<a href="https://github.com/dddiaz" class="button">Find Me On Github!</a>
+					</footer>
+				</div>
+			</section>
+			<!-- contact -->
+			<!-- Contact -->
+			<section id="contact" class="four">
+				<div class="container">
+					<header>
+						<h2>Contact</h2>
+					</header>
+					<a href="#" class="image fit"><img src="{{ url_for('static', filename='images/sailing-compressed.jpg') }}" alt="" /></a>
+					</br>
+					<p>Let's work together to accomplish something great!</p>
+					<form id="contact-form">
+						<div class="row">
+							<div class="6u" style="padding-bottom:20px;"><input type="text" name="name" placeholder="Name" /></div>
+							<div class="6u" style="padding-bottom:20px;"><input type="text" name="email" placeholder="Email" /></div>
+							<input type="text" name="_gotcha" style="display:none" />
+							<div class="12u"  style="padding-bottom:20px;">
+								<textarea name="message" placeholder="Message"></textarea>
+							</div>
+							<div class="12u">
+								<input id="contact-submit-btn" class="button" type="submit" value="Send Message" />
+							</div>
+						</div>
+					</form>
+					<!--<p>Enough About Me. Let's Hear About You!</p>-->
+					<!-- <p>Let's work together to accomplish something great!</p> -->
+				</div>
+			</section>
+		</div>
+		<div id="footer">
+			<ul class="copyright">
+				<li>&copy; Daniel Diaz. All rights reserved.</li>
+			</ul>
+		</div>
+		<!-- Theme Scripts -->
+		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.scrollzer.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
+		<!-- Start Custom Scripts -->
+		<script src="{{ url_for('static', filename='js/site.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bg.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/formspree.js') }}"></script>
+		<!-- End Custom Scripts -->
+		<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='js/ie/respond.min.js') }}"></script><![endif]-->
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<!-- GA CODE -->
+{#		<script>#}
+{#			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){#}
+{#			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),#}
+{#			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)#}
+{#			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');#}
+{##}
+{#			ga('create', 'UA-52142505-1', 'danieldelvindiaz.com');#}
+{#			ga('send', 'pageview');#}
+{#		</script>#}
+	</body>
+</html>

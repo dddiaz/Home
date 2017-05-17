@@ -1,5 +1,7 @@
 FROM python:3
 
+MAINTAINER Daniel Diaz "daniel.delvin.diaz+dockerfile@gmail.com"
+
 EXPOSE 5000
 
 RUN mkdir /app
