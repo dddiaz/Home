@@ -1,0 +1,12 @@
+Need to inject following env_vars into docker / elastic beanstalk:
+
+When running locally in pycharm:
+Open the docker tab, click on environmet variables and add
+make sure to press save!
+
+For Elastic Beanstalk:
+Navigate to configuration then container options
+then environment properties
+
+
+FLASK_IN_DEBUG_MODE -> set to True or False
