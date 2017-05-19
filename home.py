@@ -16,17 +16,17 @@ app.config.from_object(__name__)
 #somehow check if session is set up or we are in dev so use local env variables
 #maybe if app.debug is true or dev environmental variable
 
-if "AWS_ACCESS_KEY_ID" in os.environ:
-    print("jngfdjksngjsnjfsf")
-else:
-    print("nooooooo")
-
-client = boto3.resource('dynamodb',
-                      region_name='us-east-1',
-                      aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
-                      aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'])
-table = client.Table('Home-Blog')
-print(table.creation_date_time)
+# if "AWS_ACCESS_KEY_ID" in os.environ:
+#     print("jngfdjksngjsnjfsf")
+# else:
+#     print("nooooooo")
+#
+# client = boto3.resource('dynamodb',
+#                       region_name='us-east-1',
+#                       aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
+#                       aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'])
+# table = client.Table('Home-Blog')
+# print(table.creation_date_time)
 
 @app.route('/')
 def index():
@@ -35,8 +35,7 @@ def index():
 @app.route('/test')
 def hello_world():
     # fetch specific
-    response = client.describe_table(TableName='Home-Blog')
-    return response
+    raise OSError
 
 
 if __name__ == '__main__':
