@@ -17,5 +17,6 @@ def test_error():
 
 
 if __name__ == '__main__':
-    # This is here so we can access the web app from outside the container
-    app.run(debug=os.environ['FLASK_IN_DEBUG_MODE'], host='0.0.0.0')
+    debug_mode = os.getenv('FLASK_IN_DEBUG_MODE', 'False') == 'True'
+    # Need to set host to access outside of container
+    app.run(debug=debug_mode, host='0.0.0.0')
