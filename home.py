@@ -1,14 +1,42 @@
-from flask import Flask, render_template, send_from_directory
+import os
+from flask import Flask, render_template
+
+#from boto3 import dynamodb
+import boto3
 
 app = Flask(__name__)
+app.config.from_object(__name__)
 
-@app.route('/css/<path:path>')
-def send_js(path):
-    return send_from_directory('css', path)
+#app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+
+# @app.errorhandler(404)
+# def page_not_found(e):
+#     return render_template('404.html'), 404
+
+#somehow check if session is set up or we are in dev so use local env variables
+#maybe if app.debug is true or dev environmental variable
+
+if "AWS_ACCESS_KEY_ID" in os.environ:
+    print("jngfdjksngjsnjfsf")
+else:
+    print("nooooooo")
+
+client = boto3.resource('dynamodb',
+                      region_name='us-east-1',
+                      aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
+                      aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'])
+table = client.Table('Home-Blog')
+print(table.creation_date_time)
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template("index.html")
+
+@app.route('/test')
+def hello_world():
+    # fetch specific
+    response = client.describe_table(TableName='Home-Blog')
+    return response
 
 
 if __name__ == '__main__':
