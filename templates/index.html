@@ -92,7 +92,7 @@
 					</p>
 
 					<footer id="large-screen-button-footer">
-						<a href="resume/resumeDiaz.pdf" class="button scrolly">Resume</a>
+						<a href="{{ url_for('static', filename='resume/resumeDiaz.pdf') }}" class="button scrolly">Resume</a>
 						<a href="http://www.linkedin.com/pub/daniel-diaz/55/841/3a7" class="button scrolly">View My LinkedIn Profile</a>
 					</footer>
 
@@ -146,7 +146,7 @@
 								A person without Type 1 Diabetes has an average blood glucose reading of 120. The graphic shows whether I am above, below, or at average.
 							</div>
 							<div id="BGDescription">
-								<p>Using AWS Lambda (NodeJS) and API Gateway, I am able to retrieve real time data regarding my current glucose reading. I hope to develop analytics and insights into glucose readings to help Type I Diabetics better manage their Diabetes.</p>
+								<p>Using MongoDB and a Python Flask API, I am able to retrieve real time data regarding my current glucose reading. I hope to develop analytics and insights into glucose readings to help Type I Diabetics better manage their Diabetes.</p>
 							</div>
 						</div>
 					</div>
@@ -181,7 +181,7 @@
 						</div>
 						<div class="4u">
 							<article class="item">
-								<a href="https://github.com/dddiaz/danieldelvindiaz.com" class="image fit"><img src="{{ url_for('static', filename='images/DiazGear.png') }}" alt="" /></a>
+								<a href="https://github.com/dddiaz/Home" class="image fit"><img src="{{ url_for('static', filename='images/DiazGear.png') }}" alt="" /></a>
 								<header>
 									<h3>This Website</h3>
 								</header>
@@ -219,23 +219,24 @@
 				<div class="container">
 					<header>
 						<h2>Contact</h2>
+                        <a href="http://www.linkedin.com/pub/daniel-diaz/55/841/3a7" class="button scrolly">My LinkedIn Profile</a>
 					</header>
 					<a href="#" class="image fit"><img src="{{ url_for('static', filename='images/sailing-compressed.jpg') }}" alt="" /></a>
 					</br>
 					<p>Let's work together to accomplish something great!</p>
-					<form id="contact-form">
-						<div class="row">
-							<div class="6u" style="padding-bottom:20px;"><input type="text" name="name" placeholder="Name" /></div>
-							<div class="6u" style="padding-bottom:20px;"><input type="text" name="email" placeholder="Email" /></div>
-							<input type="text" name="_gotcha" style="display:none" />
-							<div class="12u"  style="padding-bottom:20px;">
-								<textarea name="message" placeholder="Message"></textarea>
-							</div>
-							<div class="12u">
-								<input id="contact-submit-btn" class="button" type="submit" value="Send Message" />
-							</div>
-						</div>
-					</form>
+{#					<form id="contact-form">#}
+{#						<div class="row">#}
+{#							<div class="6u" style="padding-bottom:20px;"><input type="text" name="name" placeholder="Name" /></div>#}
+{#							<div class="6u" style="padding-bottom:20px;"><input type="text" name="email" placeholder="Email" /></div>#}
+{#							<input type="text" name="_gotcha" style="display:none" />#}
+{#							<div class="12u"  style="padding-bottom:20px;">#}
+{#								<textarea name="message" placeholder="Message"></textarea>#}
+{#							</div>#}
+{#							<div class="12u">#}
+{#								<input id="contact-submit-btn" class="button" type="submit" value="Send Message" />#}
+{#							</div>#}
+{#						</div>#}
+{#					</form>#}
 					<!--<p>Enough About Me. Let's Hear About You!</p>-->
 					<!-- <p>Let's work together to accomplish something great!</p> -->
 				</div>

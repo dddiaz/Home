@@ -6,3 +6,4 @@
 - favicon
 - check env variables exist
 - email form??
+-update about this site link on homepage
