@@ -1,0 +1,8 @@
+- ~~debug mode fix~~
+- https
+- ~~app route for glucose data~~
+- ~~update js for updated glucose info~~
+- google analytics
+- favicon
+- check env variables exist
+- email form??

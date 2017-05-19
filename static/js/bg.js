@@ -6,19 +6,16 @@ $(document).ready(function(){
       $('.donut').addClass('almost-empty');
     }, 500);
 
-    $.get("https://diaz-bg.herokuapp.com/api/v1/entries/current", function(data) {
+    $.getJSON("/last-blood-glucose", function(data) {
         // This function executes on success
-        data = data.split("\t");
-        var bg = data[2];
-        //var trend = data['trend'];
-        var direction = data[3];
-        //console.log("BG: " + bg);
+        var bg = data["sgv"];
+        var trend = data['trend'];
+        var direction = data['direction'];
         var returnBG = function() {
             return bg;
         }
         //Once Data is loaded, attatch an inview event to the donut
-        //_setBGInfoText(bg,trend,direction);
-        _setBGInfoText(bg,direction);
+        _setBGInfoText(bg,trend,direction);
         $('.donut').bind('inview', function(event, visible) {
             if (visible) {
                 _adjustBGInfoDonut(returnBG());
@@ -46,25 +43,25 @@ $(document).ready(function(){
         $('.donut').attr("class","donut almost-empty");
     }
 
-    var _setBGInfoText = function(bg,direction){
-        $('#BGText').text(_generateBGText(bg,direction));
+    var _setBGInfoText = function(bg,trend,direction){
+        $('#BGText').text(_generateBGText(bg,trend,direction));
     }
 
-    // var _generateBGTrendText = function(trend,direction){
-    //     var dir = _getDirection(direction)
-    //     if (trend){ //bg is not null or empty
-    //         return (" is trending "
-    //             + dir + " by " + trend + " points");
-    //     }
-    // }
+    var _generateBGTrendText = function(trend,direction){
+        var dir = _getDirection(direction)
+        if (trend){ //bg is not null or empty
+            return (" is trending "
+                + dir + " by " + trend + " points");
+        }
+    }
 
-    var _generateBGText = function(bg,direction){
+    var _generateBGText = function(bg,trend,direction){
         var dir = _getDirection(direction)
         var trendText = " and no current trend info.";
         var bgText = "";
         var result = "No Last Blood Glucose Reading...";
-        if (direction){ //bg is not null or empty
-            trendText = " and is trending " + dir + ".";
+        if (trend && direction) { //bg is not null or empty
+            trendText = " and is trending " + dir + " by " + trend + " points.";
         }
         if (bg){ //bg is not null or empty
           if (bg < 80){
