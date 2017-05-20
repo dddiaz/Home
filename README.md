@@ -1,24 +1,16 @@
 # Future Home of my personal website
 
+This is my personal website. It is build with Python, Flask, MongoDB, and Docker.
+It is deployed on AWS using code pipeline to automatically build and deploy changes pushed to Github.  
+It also runs my personal blood glucose API that returns real time blood glucose data.
+
+I hope you enjoy checking out the source.  
+Nothing is ever perfect, but I am proud of what I have accomplished here.  
+If you notice anything out of place, feel free to let me know!
+
 #### Goals:
 - Utilize Docker
 - Continuous Delivery / Continuous Integration
 - Python with Flask
 - Blog
 
-TODO:
-- Set up aws pipeline 
-- output pipeline to json and save to project
-- run unit tests and pep 8 in pieline?
-- use codebuild to push to docker hub, then use codebuild to run tests
-- Not sure how https is gunnna work
-- dont forget about favicon hehe
-- re-enable google analytics, increase specificity
-- use nginx or something(s3?) to serve static files
-
-read:
-codebuild:
-http://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html#sample-docker-docker-hub
-
-Blog TODO:
-- post about code pipeline and docker

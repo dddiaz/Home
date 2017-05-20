@@ -3,7 +3,9 @@
 - ~~app route for glucose data~~
 - ~~update js for updated glucose info~~
 - google analytics
-- favicon
+- ~~favicon~~
 - check env variables exist
 - email form??
--update about this site link on homepage
+- update about this site link on homepage
+- ~handle not found url nicely?~
+- ~~fix bg css~~

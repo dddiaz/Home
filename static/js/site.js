@@ -6,7 +6,11 @@ $(function(){
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
     if (w>961){
         $("#small-screen-button-footer").hide();
+        $("#Big-Screen-BGDescription1").show();
+        $("#Big-Screen-BGDescription2").show();
     }else{
         $("#large-screen-button-footer").hide();
+        $("#Big-Screen-BGDescription1").hide();
+        $("#Big-Screen-BGDescription2").hide();
     }
 });
