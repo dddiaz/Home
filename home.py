@@ -36,7 +36,7 @@ else:
     # use configs in environment specified in the Elastic Beanstalk Console
     app.config['NIGHTSCOUT_DB_CONNECTION_STRING'] = os.getenv('NIGHTSCOUT_DB_CONNECTION_STRING', '')
     app.config['NIGHTSCOUT_DB_NAME'] = os.getenv('NIGHTSCOUT_DB_NAME', '')
-    DYNAMODB = boto3.resource('dynamodb')
+    DYNAMODB = boto3.resource('dynamodb', region_name='us-east-1')
 
 
 # Nightscout db logic
