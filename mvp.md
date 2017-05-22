@@ -9,3 +9,4 @@
 - update about this site link on homepage
 - ~handle not found url nicely?~
 - ~~fix bg css~~
+- force https

@@ -44,7 +44,7 @@
 						<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
 						<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
 						<li><a href="#bg-stats" id="bg-stats-link" class="skel-layers-ignoreHref"><span class="icon fa-rocket">BG Stats</span></a></li>
-						<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+						<li><a href="#blog" id="blog-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Blog</span></a></li>
 						<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
 					</ul>
 				</nav>
@@ -55,7 +55,7 @@
 					<li><a href="https://www.linkedin.com/in/daniel-diaz-3a784155" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 					<li><a href="{{ url_for('static', filename='resume/resumeDiaz.pdf') }}" class="icon fa-file"><span class="label">Resume</span></a></li>
 					<li><a href="https://github.com/dddiaz" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="mailto:daniel.delivn.diaz@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="mailto:daniel.delivn.diaz+home@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -147,7 +147,7 @@
 						</div>
 					</div>
 					<footer>
-						<a href="https://github.com/dddiaz/Home" class="button">Check Out The Project On Github!</a>
+						<a href="https://github.com/dddiaz/Home" class="button">Check it out on my GitHub!</a>
 					</footer>
 				</div>
 			</section>
@@ -155,72 +155,43 @@
 			<section id="portfolio" class="three">
 				<div class="container">
 					<header>
-						<h2>Portfolio</h2>
+						<h2>Blog</h2>
 					</header>
 					<p>When it comes to application development there are many languages to choose from,
 						a few of the languages I specialize in include Python, and C#.NET.
-						Below you can check out a few of the many interesting projects that I work on.</p>
+						Below you can check out a few of the many interesting projects that I have worked on
+                        and written blog posts about.</p>
 					<div class="row">
 						<div class="4u">
 							<article class="item">
-								<a href="https://github.com/dddiaz/3DReconstructionPipeline" class="image fit"><img src="{{ url_for('static', filename='images/3dreconstruction.png') }}" alt="" /></a>
+								<a href="/blog/7d0e67f2-7c5f-4436-b95d-241ed22ee486" class="image fit"><img src="{{ url_for('static', filename='images/bg.png') }}" alt="BG-Donut" /></a>
 								<header>
-									<h3>3D Reconstrution Pipeline</h3>
+									<h3>How Blood Glucose Stats Works</h3>
 								</header>
 							</article>
-							<!-- <article class="item">
-								<a href="http://snapmap.us" class="image fit"><img src="images/snapmap_full.png" alt="" /></a>
-								<header>
-									<h3>Snapmap</h3>
-								</header>
-							</article> -->
 						</div>
 						<div class="4u">
 							<article class="item">
-								<a href="https://github.com/dddiaz/Home" class="image fit"><img src="{{ url_for('static', filename='images/DiazGear.png') }}" alt="" /></a>
+								<a href="/blog/e097f8f7-df83-4006-bfe3-2657466d875b" class="image fit"><img src="{{ url_for('static', filename='images/DiazGear.png') }}" alt="Diaz Gear Symbol" /></a>
 								<header>
-									<h3>This Website</h3>
+									<h3>About This Website</h3>
 								</header>
 							</article>
-							<!-- <article class="item">
-								<a href="https://github.com/dddiaz/BeckmanResearchApplication" class="image fit"><img src="images/beckman.png" alt="" /></a>
-								<header>
-									<h3>Beckman Research Application</h3>
-								</header>
-							</article> -->
 						</div>
 						<div class="4u">
 							<article class="item">
-								<a href="https://github.com/dddiaz/searchengine" class="image fit"><img src="{{ url_for('static', filename='images/django.png') }}" alt="" /></a>
+								<a href="/blog/dc68ec48-c970-4cd0-b046-5c878466be25" class="image fit"><img src="{{ url_for('static', filename='images/aws.jpg') }}" alt="AWS" /></a>
 								<header>
-									<h3>Search Engine</h3>
+									<h3>AWS Code Pipeline</h3>
 								</header>
 							</article>
-							<!-- <article class="item">
-								<a href="https://github.com/dddiaz" class="image fit"><img src="images/github.png" alt="" /></a>
-								<header>
-									<h3>Check Me Out On Github</h3>
-								</header>
-							</article> -->
 						</div>
 					</div>
-					<footer>
-						<a href="https://github.com/dddiaz" class="button">Find Me On Github!</a>
-					</footer>
+{#					<footer>#}
+{#						<a href="/blog" class="button">Blog Home</a>#}
+{#					</footer>#}
 				</div>
 			</section>
-{#			<!-- About This Site -->#}
-{#            <section id="about-this-site" class="two">#}
-{#                <div class="container">#}
-{#                    <header>#}
-{#						<h2>About This Site</h2>#}
-{#					</header>#}
-{#                    <p> My goal is to have this dynamic website be the future home of all my personal projects.#}
-{#                    To ensure I would be able to iterate quickly with portability, I made several key decisions.#}
-{#                    One, this site is built with python and flask. Whenever changes are made to the code, I have an #}
-{#                    AWS </p>#}
-{#                </div>#}
-{#            </section>#}
 			<!-- Contact -->
 			<section id="contact" class="four">
 				<div class="container">
@@ -228,23 +199,13 @@
 						<h2>Contact</h2>
                         <p>Let's work together to accomplish something great!</p>
 					</header>
-                    <a href="http://www.linkedin.com/pub/daniel-diaz/55/841/3a7" class="button scrolly">My LinkedIn Profile</a>
-{#					<a href="#" class="image fit"><img src="{{ url_for('static', filename='images/sailing-compressed.jpg') }}" alt="" /></a>#}
-{#					<form id="contact-form">#}
-{#						<div class="row">#}
-{#							<div class="6u" style="padding-bottom:20px;"><input type="text" name="name" placeholder="Name" /></div>#}
-{#							<div class="6u" style="padding-bottom:20px;"><input type="text" name="email" placeholder="Email" /></div>#}
-{#							<input type="text" name="_gotcha" style="display:none" />#}
-{#							<div class="12u"  style="padding-bottom:20px;">#}
-{#								<textarea name="message" placeholder="Message"></textarea>#}
-{#							</div>#}
-{#							<div class="12u">#}
-{#								<input id="contact-submit-btn" class="button" type="submit" value="Send Message" />#}
-{#							</div>#}
-{#						</div>#}
-{#					</form>#}
-					<!--<p>Enough About Me. Let's Hear About You!</p>-->
-					<!-- <p>Let's work together to accomplish something great!</p> -->
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/daniel-diaz-3a784155" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="{{ url_for('static', filename='resume/resumeDiaz.pdf') }}" class="icon fa-file"><span class="label">Resume</span></a></li>
+                        <li><a href="https://github.com/dddiaz" class="icon fa-github"><span class="label">Github</span></a></li>
+                        <li><a href="mailto:daniel.delivn.diaz+home@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				    </ul>
+{#                    <a href="mailto:daniel.delivn.diaz+home@gmail.com" class="button scrolly">Email Me!</a>#}
 				</div>
 			</section>
 		</div>
@@ -268,14 +229,15 @@
 		<!--[if lte IE 8]><script src="{{ url_for('static', filename='js/ie/respond.min.js') }}"></script><![endif]-->
 		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 		<!-- GA CODE -->
-{#		<script>#}
-{#			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){#}
-{#			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),#}
-{#			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)#}
-{#			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');#}
-{##}
-{#			ga('create', 'UA-52142505-1', 'danieldelvindiaz.com');#}
-{#			ga('send', 'pageview');#}
-{#		</script>#}
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-99682958-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
 	</body>
 </html>

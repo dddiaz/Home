@@ -10,3 +10,7 @@ then environment properties
 
 
 FLASK_IN_DEBUG_MODE -> set to True or False
+
+AWS Credentials should be injected into ec2 instance using iam role
+
+SPecify a debug.config to get aws credentials when running locally
