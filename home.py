@@ -49,25 +49,6 @@ if app.config['NIGHTSCOUT_DB_CONNECTION_STRING'] != '' and app.config['NIGHTSCOU
 blog_table = DYNAMODB.Table('Home-Blog')
 
 
-# # Put an item in the db
-# response = blog_table.put_item(
-#     Item={
-#         'UUID': str(uuid.uuid4()),
-#         'year': 2017,
-#         'title': "Test Blog Title",
-#         'tags': {
-#             'test':'test',
-#         },
-#         'desc':"test blog post",
-#         'post':"This is the content of a test blog post",
-#         'date': str(datetime.datetime.utcnow()),
-#         'last_modified': str(datetime.datetime.utcnow())
-#         }
-# )
-# print("PutItem succeeded:")
-# print(response)
-
-
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -81,6 +62,7 @@ def index():
 @app.route('/health')
 def health():
     return jsonify()
+
 
 @app.route('/test-blog-post-layout')
 def test_blog_post_layout():
