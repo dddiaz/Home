@@ -104,6 +104,7 @@ def show_entry(post_id):
     :param post_id: 
     :return: 
     """
+    # TODO : handle not found
     try:
         response = blog_table.get_item(
             Key={'UUID': post_id}
@@ -112,6 +113,10 @@ def show_entry(post_id):
         #print(e.response['Error']['Message'])
         pass
     else:
+        # If searched item doesnt exist, redirect to index
+        # in future redirect to blog home
+        if 'Item' not in response.keys():
+            return render_template('index.html')
         item = response['Item']
         return render_template("blog_post.html", post=item)
 

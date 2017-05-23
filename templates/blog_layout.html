@@ -6,12 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Daniel Diaz's Personal Website" />
 		<meta name="keywords" content="Software Engineer Web Developer" />
-		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='js/ie/html5shiv.js') }}"></script><![endif]-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie8.css') }}" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie9.css') }}" /><![endif]-->
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/donut.css') }}" />
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
 	</head>
     <body>
@@ -26,19 +25,8 @@
 				</div>
 				<!-- Nav -->
 				<nav id="nav">
-					<!--
-						Prologue's nav expects links in one of two formats:
-						1. Hash link (scrolls to a different section within the page)
-							<li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-						2. Standard link (sends the user to another page/site)
-							<li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-					-->
 					<ul>
-						<li><a href="{{ url_for('index') }}#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-						<li><a href="{{ url_for('index') }}#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-						<li><a href="{{ url_for('index') }}#bg-stats" id="bg-stats-link" class="skel-layers-ignoreHref"><span class="icon fa-rocket">BG Stats</span></a></li>
-						<li><a href="{{ url_for('index') }}#blog" id="blog-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Blog</span></a></li>
-						<li><a href="{{ url_for('index') }}#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+						<li><a href="{{ url_for('index') }}#top" id="blog-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Go Home</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -58,21 +46,6 @@
                 <li>&copy; Daniel Diaz. All rights reserved.</li>
             </ul>
         </div>
-
-        <!-- Theme Scripts -->
-		<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.scrollzer.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/jquery.inview.min.js') }}"></script>
-		<!-- Start Custom Scripts -->
-		<script src="{{ url_for('static', filename='js/site.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/bg.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/formspree.js') }}"></script>
-		<!-- End Custom Scripts -->
-		<script src="{{ url_for('static', filename='js/util.js') }}"></script>
-		<!--[if lte IE 8]><script src="{{ url_for('static', filename='js/ie/respond.min.js') }}"></script><![endif]-->
-		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 		<!-- GA CODE -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
