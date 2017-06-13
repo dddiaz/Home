@@ -11,3 +11,11 @@
 - force https
 - write 3 blog posts
 - ~~redirect not found blog posts to index~~
+
+NEW MVP
+
+removed elastic load balancing, waaaaaaaay to expensive, need to figure out what to do about https now
+
+need ga
+
+whats going on with www.dddiaz?
