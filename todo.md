@@ -17,3 +17,5 @@ http://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html#sample-
 
 Blog TODO:
 - post about code pipeline and docker
+
+- need to add unit tests

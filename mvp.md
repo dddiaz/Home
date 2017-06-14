@@ -16,6 +16,4 @@ NEW MVP
 
 removed elastic load balancing, waaaaaaaay to expensive, need to figure out what to do about https now
 
-need ga
 
-whats going on with www.dddiaz?
