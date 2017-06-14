@@ -1,0 +1,37 @@
+<p>Blood Glucose Stats works by leveraging an open source project called <a href="https://github.com/nightscout/cgm-remote-monitor">Nightscout</a>. 
+Nightscout is connected to a continuous glucose monitor that I wear on my body to get current glucose values. 
+Those values are stored in mongolab, and I use the api on dddiaz.com to query that database to update the glucose graphic in real time.
+</p>
+</hr>
+<p>
+Github Link: <a href="https://github.com/dddiaz/Home">https://github.com/dddiaz/Home</a>
+</p>
+
+<p>
+This is my personal website. It is build with Python, Flask, MongoDB, DynamoDB, and Docker. 
+It is deployed on AWS using code pipeline to automatically build and deploy changes pushed to Github.
+It also runs my personal blood glucose API that returns real time blood glucose data.
+</p>
+<p>
+I hope you enjoy checking out the source.
+Nothing is ever perfect, but I am proud of what I have accomplished here.
+If you notice anything out of place, feel free to let me know!
+</p>
+</hr>
+<p>
+Github Link: <a href="https://github.com/dddiaz/Home">https://github.com/dddiaz/Home</a>
+</p>
+
+<p>
+One of the major goals I had in mind when revamping my website is that I wanted continous deployment, so I could simply commit to github and have my changes automatically pushed to production.
+</p>
+<p>
+To accomplish this I used AWS Code-Pipeline.
+AWS Code-Pipeline waits for any changes on github, and then as soon as it notices a change, it pulls the changes from github and rebuilds the docker image. After building the docker image it then deploys it to an ec2 micro instance using AWS Elastic Beanstalk.
+</p>
+<p>
+Now I can make updates to my website without having to worry about the deployment process, which is truly a dream come true. :)</p>
+</hr>
+<p>
+Github Link: <a href="https://github.com/dddiaz/Home">https://github.com/dddiaz/Home</a>
+</p>
