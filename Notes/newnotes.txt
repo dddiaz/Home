@@ -1,0 +1,5 @@
+use docker-compose build to rebuild app
+use docker-compose up to start app and have it auto reload on changes
+
+having a new issue where no matter what i do, docker compose up only serves an app with hello world
+holy shoot, there was a python process running on the port that i guess was also a basic flask app that was never closed

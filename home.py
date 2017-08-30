@@ -1,62 +1,33 @@
 import configparser
 import os
-
-import boto3
 from botocore.exceptions import ClientError
 from flask import Flask, render_template, jsonify
-from pymongo import MongoClient
+from persistance import blog, glucose
 
 app = Flask(__name__)
 
-# configs
+# Configs
 app.config['FLASK_IN_DEBUG_MODE'] = os.getenv('FLASK_IN_DEBUG_MODE', 'False') == 'True'
-
-# Note: Only use this to use pycharm debugger.
-# Not sure yet how to inject env var of debug mode into debug container yet
-# app.config['FLASK_IN_DEBUG_MODE'] = True
-
-DYNAMODB = None
-MONGO_CLIENT =None
-
 if app.config['FLASK_IN_DEBUG_MODE']:
-    print("App in DUBUG MODE")
     # use configs from config file in app dir
     config_parser = configparser.ConfigParser()
     config_parser.read('debug.config')
     app.config['NIGHTSCOUT_DB_CONNECTION_STRING'] = config_parser['Nightscout']['NIGHTSCOUT_DB_CONNECTION_STRING']
     app.config['NIGHTSCOUT_DB_NAME'] = config_parser['Nightscout']['NIGHTSCOUT_DB_NAME']
-    # set up boto client
-    DYNAMODB = boto3.resource(
-        'dynamodb',
-        region_name='us-east-1',
-        aws_access_key_id=config_parser['AWS']['AWS_ACCESS_KEY_ID'],
-        aws_secret_access_key=config_parser['AWS']['AWS_SECRET_ACCESS_KEY']
-    )
+    app.config['AWS_ACCESS_KEY_ID'] = config_parser['AWS']['AWS_ACCESS_KEY_ID']
+    app.config['AWS_SECRET_ACCESS_KEY'] = config_parser['AWS']['AWS_SECRET_ACCESS_KEY']
 else:
     # use configs in environment specified in the Elastic Beanstalk Console
     app.config['NIGHTSCOUT_DB_CONNECTION_STRING'] = os.getenv('NIGHTSCOUT_DB_CONNECTION_STRING', '')
     app.config['NIGHTSCOUT_DB_NAME'] = os.getenv('NIGHTSCOUT_DB_NAME', '')
-    DYNAMODB = boto3.resource('dynamodb', region_name='us-east-1')
+    # AWS will already be set up on elastic beanstalk
 
-
-# Nightscout db logic
-if app.config['NIGHTSCOUT_DB_CONNECTION_STRING'] != '' and app.config['NIGHTSCOUT_DB_NAME'] != '':
-    MONGO_CLIENT = MongoClient(app.config['NIGHTSCOUT_DB_CONNECTION_STRING'])
-    db = MONGO_CLIENT[app.config['NIGHTSCOUT_DB_NAME']]
-    collection = db['entries']
-
-# Dynamo DB Setup
-blog_table = DYNAMODB.Table('Home-Blog')
-
+GlucoseValues = glucose.GlucoseValuesDB(app)
+BlogPosts = blog.BlogPostsDB(app)
 
 @app.route('/')
 def index():
     return render_template("index.html")
-
-# @app.route('/test-error')
-# def test_error():
-#     # Just using this to quickly test that prod isn't in debug mode
-#     raise OSError
 
 
 @app.route('/health')
@@ -76,17 +47,7 @@ def test_blog_post_layout():
 
 @app.route('/last-blood-glucose')
 def last_blood_glucose():
-    if MONGO_CLIENT is None:
-        # return nothing because no db connection
-        return jsonify()
-    # ordering of sort matters and dicts in python are unordered so dont use dict for sort
-    res = collection.find_one(sort=[("_id", -1)])
-    # handle errors!
-    return jsonify(sgv=res['sgv'],
-                   date=res['date'],
-                   dateString=res['dateString'],
-                   trend=res['trend'],
-                   direction=res['direction'])
+    return GlucoseValues.last_glucose_value()
 
 
 @app.route('/blog')
@@ -104,13 +65,12 @@ def show_entry(post_id):
     :param post_id: 
     :return: 
     """
-    # TODO : handle not found
+    # TODO : abstract this out
     try:
-        response = blog_table.get_item(
+        response = BlogPosts.blog_table.get_item(
             Key={'UUID': post_id}
         )
     except ClientError as e:
-        #print(e.response['Error']['Message'])
         pass
     else:
         # If searched item doesnt exist, redirect to index

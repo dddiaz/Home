@@ -1,3 +1,7 @@
+# This Dev Compose adds a volume mapping to our docker-compose file,
+# that way code changes are reflected automatically
+# Note if app not in Dev mode, code changes will not auto reload
+
 version: '2'
 
 services:

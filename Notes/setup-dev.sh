@@ -1,0 +1,1 @@
+source /Users/danieldiaz/virtual_env_3.6/bin/activate
